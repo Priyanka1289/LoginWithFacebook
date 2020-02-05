@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,79 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoginWithFacebook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5d-eW-9wt">
+                                <rect key="frame" x="101" y="427" width="212" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8qU-FO-1KI"/>
+                                </constraints>
+                                <state key="normal" title="Login With Facebook"/>
+                                <connections>
+                                    <action selector="loginWithReadPermissions" destination="BYZ-38-t0r" eventType="touchUpInside" id="ruh-9D-Jzh"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2N-KP-dDP">
+                                <rect key="frame" x="278" y="60" width="116" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sGS-90-Th6"/>
+                                    <constraint firstAttribute="width" constant="116" id="tPS-tp-t7K"/>
+                                </constraints>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logOut" destination="BYZ-38-t0r" eventType="touchUpInside" id="xy9-vm-zYp"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4vo-P2-Kbb">
+                                <rect key="frame" x="107" y="119" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="arQ-Nb-aNh"/>
+                                    <constraint firstAttribute="width" constant="200" id="p2z-Rl-jr7"/>
+                                </constraints>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1d-GZ-y7h">
+                                <rect key="frame" x="20" y="348" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="A3L-5W-aVR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="x1d-GZ-y7h" firstAttribute="top" secondItem="4vo-P2-Kbb" secondAttribute="bottom" constant="29" id="0bO-It-M3I"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g5d-eW-9wt" secondAttribute="trailing" constant="101" id="2ZY-ni-n8y"/>
+                            <constraint firstItem="g5d-eW-9wt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="101" id="4TH-kN-vn3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E2N-KP-dDP" secondAttribute="trailing" constant="20" id="GzB-S3-vec"/>
+                            <constraint firstItem="E2N-KP-dDP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="JRn-Hh-ZCG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x1d-GZ-y7h" secondAttribute="trailing" constant="20" id="MX7-it-W9D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g5d-eW-9wt" secondAttribute="bottom" constant="405" id="N47-ah-DT7"/>
+                            <constraint firstItem="4vo-P2-Kbb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="RlF-jp-bAP"/>
+                            <constraint firstItem="g5d-eW-9wt" firstAttribute="top" secondItem="x1d-GZ-y7h" secondAttribute="bottom" constant="49" id="ZOD-us-XGN"/>
+                            <constraint firstItem="4vo-P2-Kbb" firstAttribute="top" secondItem="E2N-KP-dDP" secondAttribute="bottom" constant="29" id="b8e-uV-gr3"/>
+                            <constraint firstItem="x1d-GZ-y7h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cJU-ry-Q4P"/>
+                            <constraint firstItem="x1d-GZ-y7h" firstAttribute="top" secondItem="4vo-P2-Kbb" secondAttribute="bottom" constant="29" id="lzW-TO-q4X"/>
+                            <constraint firstItem="4vo-P2-Kbb" firstAttribute="top" secondItem="E2N-KP-dDP" secondAttribute="bottom" constant="29" id="n3T-AZ-tQT"/>
+                            <constraint firstItem="g5d-eW-9wt" firstAttribute="top" secondItem="x1d-GZ-y7h" secondAttribute="bottom" constant="49" id="oUj-0a-u3f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4vo-P2-Kbb" secondAttribute="trailing" constant="107" id="pY4-Yi-IJk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="g5d-eW-9wt" id="zHg-F0-W2S"/>
+                        <outlet property="btnLogout" destination="E2N-KP-dDP" id="fRO-BU-de0"/>
+                        <outlet property="imgView" destination="4vo-P2-Kbb" id="pcy-9o-PdB"/>
+                        <outlet property="lblUserName" destination="x1d-GZ-y7h" id="SP3-CT-A6Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="92.410714285714278"/>
         </scene>
     </scenes>
 </document>
